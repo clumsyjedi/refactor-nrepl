@@ -236,6 +236,14 @@ This op returns, `version`, which is the current version of this project.
 
 This eagerly builds, and caches, ASTs for all clojure files in the project.  Returns `status` `done` on success.
 
+### move-ns
+
+the `move-ns` op takes an `old-path` and a `new-path` which are paths to a file or dir.
+
+If the `old-path`  a directory all files, including any non-clj files, are moved to `new-path`.
+
+The op returns `touched` which is a list of all files that were affected by the move.
+
 ### Errors
 
 The middleware returns errors under one of two keys: `:error` or
